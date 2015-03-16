@@ -34,7 +34,10 @@
 /*     */ import robocode.RobotDeathEvent;
 /*     */ import robocode.RoundEndedEvent;
 /*     */ import robocode.Rules;
-/*     */ 
+
+import javax.swing.text.html.parser.Entity;
+
+/*     */
 /*     */ public class BlackDeathMk7 extends CommandBasedRobot
 /*     */ {
 /*  46 */   private static ColourScheme colourScheme = ColourScheme.BLACK_DEATH;
@@ -98,7 +101,7 @@
 /*     */ 
 /*     */   protected void adjustRobotCommands()
 /*     */   {
-/* 118 */     switch ($SWITCH_TABLE$dmh$robocode$robot$BlackDeathMk7$BattleModeType()[this.battleMode.ordinal()]) {
+/* 118 */     switch (this.battleMode.ordinal()) {
 /*     */     case 1:
 /* 120 */       operateStartMode();
 /* 121 */       break;
@@ -254,7 +257,7 @@
 /*     */ 
 /*     */   private void setColoursForStartMode()
 /*     */   {
-/* 302 */     switch ($SWITCH_TABLE$dmh$robocode$robot$BlackDeathMk7$ColourScheme()[colourScheme.ordinal()]) {
+/* 302 */     switch (colourScheme.ordinal()) {
 /*     */     case 1:
 /*     */     case 3:
 /* 305 */       setAllColors(Color.black);
@@ -400,7 +403,8 @@
 /*     */       }
 /*     */     }
 /* 522 */     double rating = 0.0D;
-/* 523 */     for (Map.Entry entry : closestHits.entrySet()) {
+/* 523 */     for (Object obj : closestHits.entrySet()) {
+               Map.Entry entry=(Entry)obj;
 /* 524 */       rating -= getDamageCausedByDangerousBullet((DangerousBullet)entry.getKey(), ((Double)entry.getValue()).doubleValue());
 /*     */     }
 /* 526 */     return rating + getMotionScoreAdjustment(getEnergy() / 50.0D, velocity, bearing) + getLocationSafetyRating(target);
@@ -716,7 +720,7 @@
 /*     */ 
 /*     */   private double getDamageFromBulletsAtFutureLocation(Location location, double safeDistance)
 /*     */   {
-/* 914 */     long myTravelTime = ()(Geometry.getDistanceBetweenLocations(getLocation(), location) / 8.0D);
+/* 914 */     long myTravelTime = (long)(Geometry.getDistanceBetweenLocations(getLocation(), location) / 8.0D);
 /* 915 */     long futureTime = getTime() + myTravelTime;
 /*     */ 
 /* 917 */     double totalDamage = 0.0D;

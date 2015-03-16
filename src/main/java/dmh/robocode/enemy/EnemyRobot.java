@@ -174,7 +174,7 @@
 /* 192 */     for (ShotAtEnemy shot : this.shotAtEnemyHistory) {
 /* 193 */       short range = turnDistanceIntoStatisticRange(shot.getEnemyDistance());
 /*     */ 
-/* 195 */       switch ($SWITCH_TABLE$dmh$robocode$data$ShotAtEnemy$ShotStatus()[shot.getStatus().ordinal()]) {
+/* 195 */       switch (shot.getStatus().ordinal()) {
 /*     */       case 2:
 /* 197 */         allHitDamage += Rules.getBulletDamage(shot.getBulletPower());
 /* 198 */         allShots++;
@@ -326,7 +326,7 @@
 /*     */   }
 /*     */ 
 /*     */   public void hasJustFired(double bulletPower, long time) {
-/* 378 */     this.timeOfNextShot = (time + ()Math.ceil(Rules.getGunHeat(bulletPower) / BattleConstants.getInstance().getGunCoolingRate()));
+/* 378 */     this.timeOfNextShot = (time + (long)Math.ceil(Rules.getGunHeat(bulletPower) / BattleConstants.getInstance().getGunCoolingRate()));
 /*     */   }
 /*     */ 
 /*     */   public long getTimeOfNextShot() {

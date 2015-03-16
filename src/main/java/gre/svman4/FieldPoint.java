@@ -1,6 +1,7 @@
 /*    */ package gre.svman4;
 /*    */ 
-/*    */ import java.awt.geom.Point2D.Double;
+/*    */ import java.awt.geom.Point2D;
+import java.awt.geom.Point2D.Double;
 /*    */ 
 /*    */ class FieldPoint extends Point2D.Double
 /*    */ {

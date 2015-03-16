@@ -1,7 +1,8 @@
 /*     */ package gre.svman4;
 /*     */ 
 /*     */ import java.awt.Graphics2D;
-/*     */ import java.awt.geom.Rectangle2D.Double;
+/*     */ import java.awt.geom.Rectangle2D;
+import java.awt.geom.Rectangle2D.Double;
 /*     */ import java.util.ArrayList;
 /*     */ 
 /*     */ final class EnemyState extends RobotState

@@ -53,7 +53,7 @@
 /*  55 */       this.directionOfTravel = directionOfTravelType.BACKWARD;
 /*     */     }
 /*     */ 
-/*  58 */     this.remainingTravelTime = (()(Geometry.getDistanceBetweenLocations(myRobot.getLocation(), target) / maxVelocity * 4.0D));
+/*  58 */     this.remainingTravelTime = (long)(Geometry.getDistanceBetweenLocations(myRobot.getLocation(), target) / maxVelocity * 4.0D);
 /*     */ 
 /*  60 */     executed();
 /*     */   }
@@ -101,7 +101,7 @@
 /*     */   public boolean isDone()
 /*     */   {
 /*     */     boolean isDone;
-/*     */     boolean isDone;
+/*     */
 /* 109 */     if (this.stopAtTarget)
 /* 110 */       isDone = (this.remainingTravelTime <= 0L) || (this.target.isSameAs(this.myRobot.getLocation(), 0.1D));
 /*     */     else {
@@ -160,7 +160,7 @@
 /* 166 */     considerReversing();
 /* 167 */     this.remainingTravelTime -= 1L;
 /*     */ 
-/* 169 */     switch ($SWITCH_TABLE$dmh$robocode$navigator$NavigateToLocation$wiggleModeType()[this.wiggleState.ordinal()]) {
+/* 169 */     switch (this.wiggleState.ordinal()) {
 /*     */     case 2:
 /* 171 */       controlWiggleRecover();
 /* 172 */       break;

@@ -104,14 +104,15 @@
 /*     */ 
 /*     */   public final void processTurn()
 /*     */   {
-/*     */     int j;
-/*     */     int i;
+/*     */
+/*     */     int i=0,j;
 /* 104 */     for (Iterator localIterator = this.allBulletSegments.values().iterator(); localIterator.hasNext(); 
-/* 105 */       i < j)
+/* 105 */       )
 /*     */     {
 /* 104 */       SimulatedBulletList[] segments = (SimulatedBulletList[])localIterator.next();
 /*     */       SimulatedBulletList[] arrayOfSimulatedBulletList1;
-/* 105 */       j = (arrayOfSimulatedBulletList1 = segments).length; i = 0; continue; SimulatedBulletList segment = arrayOfSimulatedBulletList1[i];
+/* 105 */       j = (arrayOfSimulatedBulletList1 = segments).length;
+                SimulatedBulletList segment = arrayOfSimulatedBulletList1[i];
 /* 106 */       segment.processCurrentTime(this.myRobot.getTime());
 /*     */ 
 /* 105 */       i++;
@@ -121,13 +122,14 @@
 /*     */   public final void processEndOfRound(CommandBasedRobot myRobotInNextRound)
 /*     */   {
 /*     */     int j;
-/*     */     int i;
+/*     */     int i=0;
 /* 113 */     for (Iterator localIterator = this.allBulletSegments.values().iterator(); localIterator.hasNext(); 
-/* 114 */       i < j)
+/* 114 */       )
 /*     */     {
 /* 113 */       SimulatedBulletList[] segments = (SimulatedBulletList[])localIterator.next();
 /*     */       SimulatedBulletList[] arrayOfSimulatedBulletList1;
-/* 114 */       j = (arrayOfSimulatedBulletList1 = segments).length; i = 0; continue; SimulatedBulletList segment = arrayOfSimulatedBulletList1[i];
+/* 114 */       j = (arrayOfSimulatedBulletList1 = segments).length;
+                SimulatedBulletList segment = arrayOfSimulatedBulletList1[i];
 /* 115 */       segment.processEndOfRound();
 /*     */ 
 /* 114 */       i++;
