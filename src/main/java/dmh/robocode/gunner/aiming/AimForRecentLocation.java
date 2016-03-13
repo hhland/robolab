@@ -27,7 +27,7 @@
 /* 28 */       return 0.0D;
 /*    */     }
 /* 30 */     int timeRange = Math.max(20, getApproximateTimeUntilHitTarget(target, bulletSpeed));
-/* 31 */     List observations = getEnemy().getObservationsSince(getMyRobot().getTime() - timeRange);
+/* 31 */     List<RadarObservation> observations = getEnemy().getObservationsSince(getMyRobot().getTime() - timeRange);
 /* 32 */     double targetDelta = Math.min(getMyRobot().getHeight(), getMyRobot().getWidth()) / 2.0D;
 /* 33 */     double hits = 0.0D;
 /* 34 */     for (RadarObservation observation : observations) {
