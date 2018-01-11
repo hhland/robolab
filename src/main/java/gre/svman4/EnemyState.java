@@ -17,7 +17,7 @@ import java.awt.geom.Rectangle2D.Double;
 /*     */ 
 /*  39 */   public boolean isAlive = true;
 /*     */   public String name;
-/*  50 */   public ArrayList<Double> surfAbsBearings = new ArrayList();
+/*  50 */   public ArrayList<java.lang.Double> surfAbsBearings = new ArrayList();
 /*  51 */   public ArrayList<Integer> surfDirections = new ArrayList();
 /*     */ 
 /*  56 */   public static double[][][][] gunBuffers = new double[5][5][5][42];

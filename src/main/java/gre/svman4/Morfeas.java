@@ -1,6 +1,7 @@
 /*     */ package gre.svman4;
 /*     */ 
 /*     */ import java.awt.event.KeyEvent;
+import java.awt.geom.Point2D;
 /*     */ import java.awt.geom.Rectangle2D;
 /*     */ import java.awt.geom.Rectangle2D.Double;
 /*     */ import java.io.PrintStream;
@@ -227,7 +228,7 @@
 /* 341 */       this.out.println("Enemy:" + en.name);
 /* 342 */       itGun = guns.iterator();
 /* 343 */       int gunNumber = 0;
-/* 344 */       continue;
+/* 344 */       //continue;
 /* 345 */       Gun gun = (Gun)itGun.next();
 /* 346 */       this.out.println("\t" + gun.getName() + " " + en.hits[gunNumber]);
 /* 347 */       gunNumber++;
@@ -235,7 +236,7 @@
 /*     */ 
 /* 350 */     enemyWaves.clear();
 /* 351 */     mineWaves.clear();
-/* 352 */     Iterator itGun = guns.iterator();
+/* 352 */     itGun = guns.iterator();
 /* 353 */     while (itGun.hasNext()) {
 /* 354 */       Gun gun = (Gun)itGun.next();
 /* 355 */       gun.printStatisticData();
@@ -276,8 +277,8 @@
 /* 393 */     enemy.surfDirections.add(0, 
 /* 394 */       new Integer(
 /* 395 */       getVelocity() * Math.sin(e.getBearingRadians()) >= 0.0D ? 1 : -1));
-/* 396 */     enemy.surfAbsBearings.add(0, new Double(
-/* 397 */       e.getBearingRadians() + getHeadingRadians() + 3.141592653589793D));
+/* 396 */     enemy.surfAbsBearings.add(0, 
+/* 397 */       e.getBearingRadians() + getHeadingRadians() + 3.141592653589793D);
 /*     */ 
 /* 400 */     double looseEnergy = enemy.energy - e.getEnergy();
 /* 401 */     if ((looseEnergy > 0.0D) && (looseEnergy < 3.01D))
@@ -288,7 +289,7 @@
 /* 406 */       ew.bulletVelocity = Rules.getBulletSpeed(looseEnergy);
 /* 407 */       ew.distanceTraveled = Rules.getBulletSpeed(looseEnergy);
 /* 408 */       ew.lateralDirection = ((Integer)enemy.surfDirections.get(2)).intValue();
-/* 409 */       ew.directAngle = ((Double)enemy.surfAbsBearings.get(2)).doubleValue();
+/* 409 */       ew.directAngle = enemy.surfAbsBearings.get(2);
 /* 410 */       ew.fireLocation = ((FieldPoint)enemy.clone());
 /* 411 */       ew.mineRobotVelocity = Math.abs(me.velocity);
 /* 412 */       ew.distanceToEnemyPosition = me.distance(enemy);
