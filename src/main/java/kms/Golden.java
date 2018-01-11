@@ -3,9 +3,9 @@
 /*     */ import java.awt.Color;
 /*     */ import java.awt.Graphics2D;
 /*     */ import java.awt.geom.Point2D;
-/*     */ import java.awt.geom.Point2D.Double;
+/*     */ 
 /*     */ import java.awt.geom.Rectangle2D;
-/*     */ import java.awt.geom.Rectangle2D.Double;
+/*     */ 
 /*     */ import java.util.ArrayList;
 /*     */ import robocode.AdvancedRobot;
 /*     */ import robocode.Bullet;
@@ -23,7 +23,7 @@
 /*     */   public Point2D.Double _enemyLocation;
 /*     */   public ArrayList _enemyWaves;
 /*     */   public ArrayList _surfDirections;
-/*     */   public ArrayList _surfAbsBearings;
+/*     */   public ArrayList<java.lang.Double> _surfAbsBearings;
 /*  41 */   public static double _oppEnergy = 100.0D;
 /*     */ 
 /*  45 */   public static Rectangle2D.Double _fieldRect = new Rectangle2D.Double(18.0D, 18.0D, 764.0D, 564.0D);
@@ -63,7 +63,7 @@
 /*     */   {
 /*  88 */     this._enemyWaves = new ArrayList();
 /*  89 */     this._surfDirections = new ArrayList();
-/*  90 */     this._surfAbsBearings = new ArrayList();
+/*  90 */     this._surfAbsBearings = new ArrayList<java.lang.Double>();
 /*     */ 
 /*  92 */     setAdjustGunForRobotTurn(true);
 /*  93 */     setAdjustRadarForGunTurn(true);
@@ -104,7 +104,7 @@
 /*     */ 
 /* 131 */     this._surfDirections.add(0, 
 /* 132 */       new Integer(latVel >= 0.0D ? 1 : -1));
-/* 133 */     this._surfAbsBearings.add(0, new Double(absBearing + 3.141592653589793D));
+/* 133 */     this._surfAbsBearings.add(0, absBearing + 3.141592653589793D);
 /*     */ 
 /* 136 */     double bulletPower = _oppEnergy - e.getEnergy();
 /* 137 */     if ((bulletPower <= 3.0D) && (bulletPower >= 0.1D) && 
@@ -114,7 +114,7 @@
 /* 141 */       ew.bulletVelocity = bulletVelocity(bulletPower);
 /* 142 */       ew.distanceTraveled = bulletVelocity(bulletPower);
 /* 143 */       ew.direction = ((Integer)this._surfDirections.get(2)).intValue();
-/* 144 */       ew.directAngle = ((Double)this._surfAbsBearings.get(2)).doubleValue();
+/* 144 */       ew.directAngle = this._surfAbsBearings.get(2);
 /* 145 */       ew.fireLocation = ((Point2D.Double)this._enemyLocation.clone());
 /*     */ 
 /* 147 */       this._enemyWaves.add(ew);
@@ -420,7 +420,9 @@
 /*     */     double wDistance;
 /*     */ 
 /*     */     Wave() {  } 
-/* 488 */     public boolean test() { if (this.wDistance += Golden.bulletSpeed(this.wBulletPower) > this.wGunLocation.distance(Golden.enemyLocation) - 18.0D) {
+/* 488 */     public boolean test() {
+	              double d1=this.wDistance += Golden.bulletSpeed(this.wBulletPower);
+	                if (d1 > this.wGunLocation.distance(Golden.enemyLocation) - 18.0D) {
 /*     */         try {
 /* 490 */           this.wAimFactors[((int)Math.round(Utils.normalRelativeAngle(Golden.absoluteBearing(this.wGunLocation, Golden.enemyLocation) - this.wBearing) / 
 /* 491 */             this.wBearingDirection + 12.0D))] += 1;
