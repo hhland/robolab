@@ -19,6 +19,146 @@
 /*     */ 
 /*     */ public class LX_7 extends AdvancedRobot
 /*     */ {
+public class vect_t {
+
+	public vect_t(LX_7 lx_7, double to_circle_center, double r) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void addrad(double from_circle_center, double r) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	}
+public class targets_t {
+
+	public targets_t(LX_7 lx_7) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void begin_round() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void begin_turn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void update(ScannedRobotEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void hit(BulletHitEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void one_less(RobotDeathEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void collide(HitRobotEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void hit_by_bullet(HitByBulletEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void show_statistics() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	}
+public class radar_t {
+
+	public radar_t(LX_7 lx_7) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void begin_turn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void begin_round() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void end_turn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	}
+public class driver_t {
+
+	public driver_t(LX_7 lx_7) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void begin_turn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void begin_round() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void robot_collision() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void wall_collision() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void hit_by_bullet() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void end_turn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	}
+public class gunner_t {
+
+	public gunner_t(LX_7 lx_7) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void begin_turn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void begin_round() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void end_turn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	}
 /*   9 */   private final boolean ANY_DEBUG = true;
 /*  10 */   private final boolean TO_LOG_FILE = true;
 /*  11 */   private final boolean TO_CONSOLE = false;
@@ -330,7 +470,7 @@
 /* 407 */         heading - 1.570796326794897D);
 /* 408 */       double from_circle_center = normalize_angle(to_circle_center + 3.141592653589793D + w * T);
 /*     */ 
-/* 410 */       LX_7.vect_t path = new LX_7.vect_t(this, to_circle_center, R);
+/* 410 */       path = new LX_7.vect_t(this, to_circle_center, R);
 /* 411 */       path.addrad(from_circle_center, R);
 /*     */     }
 /*     */     else
