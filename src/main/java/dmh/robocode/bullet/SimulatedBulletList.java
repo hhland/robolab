@@ -42,7 +42,7 @@
 /* 42 */     for (Iterator bulletIterator = this.bullets.iterator(); bulletIterator.hasNext(); ) {
 /* 43 */       SimulatedBullet bullet = (SimulatedBullet)bulletIterator.next();
 /* 44 */       bullet.processAtTime(time);
-/* 45 */       switch ($SWITCH_TABLE$dmh$robocode$bullet$SimulatedBullet$BulletResult()[bullet.getResult().ordinal()]) {
+/* 45 */       switch (bullet.getResult().ordinal()) {
 /*    */       case 2:
 /* 47 */         this.hits += 1;
 /* 48 */         bulletIterator.remove();

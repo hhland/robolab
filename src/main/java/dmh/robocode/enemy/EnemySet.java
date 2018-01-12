@@ -78,7 +78,8 @@
 /*  76 */       localIterator2.hasNext())
 /*     */     {
 /*  75 */       EnemyRobot enemy = (EnemyRobot)localIterator1.next();
-/*  76 */       localIterator2 = enemy.getAimingStrategies().iterator(); continue; AimingStrategy aimingStrategy = (AimingStrategy)localIterator2.next();
+/*  76 */       localIterator2 = enemy.getAimingStrategies().iterator();  
+                AimingStrategy aimingStrategy = (AimingStrategy)localIterator2.next();
 /*  77 */       result.add(aimingStrategy);
 /*     */     }
 /*     */ 
@@ -96,7 +97,8 @@
 /*  86 */       System.out.println(enemy.getName());
 /*  87 */       System.out.println("--------------------");
 /*  88 */       System.out.println(enemy.getStatisticsDebugString());
-/*  89 */       localIterator2 = enemy.getAimingStrategies().iterator(); continue; AimingStrategy aimingStrategy = (AimingStrategy)localIterator2.next();
+/*  89 */       localIterator2 = enemy.getAimingStrategies().iterator(); 
+                AimingStrategy aimingStrategy = (AimingStrategy)localIterator2.next();
 /*  90 */       aimingStrategy.debugDisplayStats();
 /*     */     }
 /*     */   }

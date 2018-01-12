@@ -49,11 +49,11 @@
 /*     */   }
 /*     */ 
 /*     */   public TEffect getMostLikelyEffectOf(TCause cause) {
-/*  50 */     Map effects = (Map)this.causeAndEffectMap.get(cause);
-/*  51 */     Object likelyEffect = null;
+/*  50 */     Map<TEffect, Integer> effects = this.causeAndEffectMap.get(cause);
+/*  51 */     TEffect likelyEffect = null;
 /*  52 */     if (effects != null) {
 /*  53 */       int maxFrequency = 0;
-/*  54 */       for (Map.Entry entry : effects.entrySet()) {
+/*  54 */       for (Map.Entry<TEffect, Integer> entry : effects.entrySet()) {
 /*  55 */         if (((Integer)entry.getValue()).intValue() > maxFrequency) {
 /*  56 */           maxFrequency = ((Integer)entry.getValue()).intValue();
 /*  57 */           likelyEffect = entry.getKey();
@@ -68,9 +68,10 @@
 /*  85 */     int needToRemove = this.totalCausesMap.size() - Math.max(0, maxCauses);
 /*  86 */     if (needToRemove > 0) {
 /*  87 */       List sortedCauses = new ArrayList();
-/*  88 */       for (Map.Entry entry : this.totalCausesMap.entrySet()) {
-/*  89 */         sortedCauses.add(new CauseAndFreq(entry.getKey(), ((Integer)entry.getValue()).intValue()));
-/*     */       }
+/*  88 */       for (Map.Entry<TCause,Integer> entry : this.totalCausesMap.entrySet()) {
+/*  89 */         CauseAndFreq caf= new CauseAndFreq(entry.getKey(),entry.getValue());
+/*     */         sortedCauses.add(caf);
+                 }
 /*  91 */       Collections.sort(sortedCauses);
 /*  92 */       while (needToRemove-- > 0)
 /*  93 */         ((CauseAndFreq)sortedCauses.get(needToRemove)).purge();
@@ -88,11 +89,12 @@
 /*     */     TCause cause;
 /*     */     int frequency;
 /*     */ 
-/*     */     public CauseAndFreq(int cause)
-/*     */     {
-/*  70 */       this.cause = cause;
-/*  71 */       this.frequency = frequency;
-/*     */     }
+/*     */    
+public CauseAndFreq(TCause key, Integer frequency) {
+	// TODO Auto-generated constructor stub
+	this.cause = cause;
+	/*  71 */       this.frequency = frequency;
+}
 /*     */ 
 /*     */     public int compareTo(CauseAndEffect<TCause, TEffect>.CauseAndFreq compareWith) {
 /*  75 */       return this.frequency - compareWith.frequency;
