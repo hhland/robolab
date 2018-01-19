@@ -31,13 +31,14 @@ public class NetTank extends Tank{
 		}
 	}
 	
-	public void Draw(Graphics g)
+	@Override
+	public void draw(Graphics g)
 	{
 		if(this.alive==false)
 			return;
 		g.setColor(Color.PINK);
 		g.drawString(""+this.tankId, x+4,y-8);
-		draw(g);
+		super.draw(g);
 		Move();
 	}
 

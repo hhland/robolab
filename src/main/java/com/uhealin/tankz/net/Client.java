@@ -83,16 +83,16 @@ public class Client extends Frame implements WindowListener,KeyListener{
 		g.drawString("cannons: "+cannons.size(),15,80);
 		g.drawString("explodes: "+explodes.size(),15,95);
 		g.setColor(color);
-			mytank.Draw(g);
+			mytank.draw(g);
 		for(int i=cannons.size()-1 ;i>=0;i--)
 			cannons.get(i).draw(g);
 		for(int i=emeytanks.size()-1;i>=0;i--)
-			emeytanks.get(i).Draw(g);
+			emeytanks.get(i).draw(g);
 		for(int i=nettanks.size()-1;i>=0;i--)
-			nettanks.get(i).Draw(g);
+			nettanks.get(i).draw(g);
 		for(int i=explodes.size()-1;i>=0;i--)
 			explodes.get(i).draw(g);
-
+        
 		
 	}
 	

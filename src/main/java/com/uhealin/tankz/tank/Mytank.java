@@ -35,9 +35,10 @@ public class Mytank extends Tank{
 		this.setDirection();
 	}
 
-	public void Draw(Graphics g)
+	@Override
+	public void draw(Graphics g)
 	{
-        this.draw(g);
+        super.draw(g);
         this.Move();
 	}
 	

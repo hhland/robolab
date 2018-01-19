@@ -90,9 +90,9 @@
 /*     */     int frequency;
 /*     */ 
 /*     */    
-public CauseAndFreq(TCause key, Integer frequency) {
+public CauseAndFreq(TCause cause, Integer frequency) {
 	// TODO Auto-generated constructor stub
-	this.cause = cause;
+	               this.cause = cause;
 	/*  71 */       this.frequency = frequency;
 }
 /*     */ 

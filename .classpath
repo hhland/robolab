@@ -6,6 +6,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
@@ -18,5 +19,15 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/robocode.jar"/>
+	<classpathentry kind="lib" path="lib/picocontainer-2.14.2.jar"/>
+	<classpathentry kind="lib" path="lib/robocode.battle-1.9.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/robocode.core-1.9.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/robocode.host-1.9.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/robocode.repository-1.9.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/robocode.sound-1.9.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/robocode.ui-1.9.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/robocode.ui.editor-1.9.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/roborumble.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -27,8 +27,9 @@ public class EmeyTank extends Tank {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void Draw(Graphics g) {
-		this.draw(g);
+	@Override
+	public void draw(Graphics g) {
+		super.draw(g);
 		this.Move();
 	}
 

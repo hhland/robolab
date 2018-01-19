@@ -11,18 +11,22 @@ public class StartClient {
             
             if(args.length==0){
                new Client().loadForm();
+            }else{
+            	
+                
+                String cmd=args[0];
+                
+                  
+                if("server".equals(cmd)){
+                    Server s = new Server();
+    		s.loadForm();
+    		s.start();
+                }else if("client".equals(cmd)){
+                  new Client().loadForm();
+                }    	
+            	
             }
-            
-            String cmd=args[0];
-            
-              
-            if("server".equals(cmd)){
-                Server s = new Server();
-		s.loadForm();
-		s.start();
-            }else if("client".equals(cmd)){
-              new Client().loadForm();
-            }
+        
         
 	}
 
